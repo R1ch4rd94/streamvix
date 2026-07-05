@@ -53,6 +53,8 @@ import { getGuardaflixStreams } from './providers/guardaflix';
 import { getTrailerStreams, isTrailerProviderAvailable } from './providers/trailerProvider';
 // EasyProxy DVR integration
 import { getDvrStreamsForChannel, getDvrConfig, buildDvrRecordEntry } from './utils/easyproxyDvr';
+// Live failover: sonda le sorgenti live e scarta quelle morte (roadmap D.9, opt-in LIVE_FAILOVER=1)
+import { filterLiveStreams } from './utils/streamFailover';
 
 // ================= TYPES & INTERFACES =================
 const DISABLE_LIVE_EVENTS = process.env.DISABLE_LIVE_EVENTS === 'true';
@@ -6059,8 +6061,10 @@ function createBuilder(initialConfig: AddonConfig = {}) {
                             }
                         }
 
-                        console.log(`✅ Returning ${allStreams.length} dynamic event streams`);
-                        return { streams: allStreams };
+                        // === D.9 LIVE FAILOVER: scarta le sorgenti morte (opt-in LIVE_FAILOVER=1) ===
+                        const liveStreams = await filterLiveStreams(allStreams, { logger: (m) => debugLog(m) });
+                        console.log(`✅ Returning ${liveStreams.length} dynamic event streams${liveStreams.length !== allStreams.length ? ` (failover: ${allStreams.length}->${liveStreams.length})` : ''}`);
+                        return { streams: liveStreams };
                     }
                     // --- TVTAP: cerca usando vavooNames ---
                     // Check se TVTAP è abilitato

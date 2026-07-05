@@ -8,6 +8,7 @@
     "build": "tsc && shx mkdir -p dist/providers && shx cp src/providers/eurostreaming.py dist/providers/ && shx cp -r config dist/ && shx mkdir -p dist/config && shx cp src/config/*.json dist/config/ && shx cp vavoo_resolver.py dist/ && shx cp tvtap_resolver.py dist/",
     "start": "node dist/addon.js",
     "dev": "ts-node src/addon.ts",
+    "test": "node --test --require ts-node/register \"tests/**/*.test.ts\"",
     "check:domains": "node scripts/check_domains.js"
   },
   "dependencies": {
