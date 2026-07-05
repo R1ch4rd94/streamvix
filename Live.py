@@ -660,7 +660,13 @@ def main():
         # Rimuove frammenti HTML come </span> e eventuali tag residui
         c = raw.replace('</span>', '')
         c = re.sub(r'<[^>]+>', '', c)
-        c = c.strip()
+        # La sorgente ora aggiunge emoji/pittogrammi ai nomi categoria
+        # (es. "All Soccer Events 🌍", "Tennis 🎾", "Volleyball 🏐"): senza
+        # rimuoverli il match esatto contro la whitelist fallisce e non viene
+        # incluso nessun evento. Stringa non-raw: Python converte gli escape
+        # \U/\u nei caratteri reali prima che li veda re.
+        c = re.sub('[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U00002B00-\U00002BFF️‍]', '', c)
+        c = re.sub(r'\s+', ' ', c).strip()
         # Rimuove eventuale suffisso " :" finale
         c = re.sub(r"\s*:\s*$", '', c)
         # Normalizzazioni note tra sorgente e target
