@@ -1,0 +1,17 @@
+# Dipendenze e artefatti di build
+node_modules/
+dist/
+
+# Lockfile pnpm (il repo traccia già package-lock.json)
+pnpm-lock.yaml
+
+# Segreti / configurazione locale (MFP_PSW, TMDB_API_KEY, ADMIN_TOKEN, ...)
+.env
+.env.*
+!.env.example
+
+# Log e file di sistema
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
