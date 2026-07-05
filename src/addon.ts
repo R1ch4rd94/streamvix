@@ -697,14 +697,17 @@ function sortStreamsByPriority(streams: { url?: string; title?: string }[]): voi
 
 /**
  * Determina il nome dello stream (etichetta esterna) in base alla presenza di MFP nell'URL.
- * - Con MFP (mediaflow proxy): 'Live 🔴'
- * - Senza MFP (clean/direct): 'Live 🔓'
+ * - Con MFP (mediaflow proxy): 'Live 🔒 Proxy'
+ * - Senza MFP (clean/direct): 'Live 🔓 Diretto'
  */
 function getStreamName(url: string): string {
-    if (!url) return 'Live 🔴';
+    if (!url) return 'Live 🔒 Proxy';
     // Rileva se l'URL usa MFP/mediaflow proxy
     const hasMfp = /mfp|mediaflow|proxy\/(?:stream|hls|mpd)/i.test(url);
-    return hasMfp ? 'Live 🔴' : 'Live 🔓';
+    // Icona + testo: 🔒 Proxy = via proxy (protetto), 🔓 Diretto = clean.
+    // Coerente col lucchetto già usato altrove; il 🔴 confondeva (sembrava
+    // "morto"/"REC") e collideva col 🔴 REC del DVR.
+    return hasMfp ? 'Live 🔒 Proxy' : 'Live 🔓 Diretto';
 }
 
 // ===== CF DLHD PROXY HELPERS (supporta formati ?url=https://dlhd.pk/watch.php?id=123 e ?id=123) =====
@@ -3018,8 +3021,8 @@ function createBuilder(initialConfig: AddonConfig = {}) {
     });
 
     // === HANDLER STREAM ===
-    builder.defineStreamHandler(
-        async ({
+    // Implementazione interna; il failover D.9 è applicato dal wrapper in fondo.
+    const streamHandlerImpl = async ({
             id,
             type,
             config: requestConfig
@@ -7307,8 +7310,20 @@ function createBuilder(initialConfig: AddonConfig = {}) {
                 console.error('Stream extraction failed:', error);
                 return { streams: [] };
             }
-        }
-    );
+        };
+
+    // === Failover D.9: nasconde gli stream morti su TUTTI i rami TV/live ===
+    // (i canali statici non passavano dal filtro interno del ramo eventi)
+    builder.defineStreamHandler(async (args: { id: string; type: string; config?: any }): Promise<{ streams: Stream[] }> => {
+        const res = await streamHandlerImpl(args);
+        try {
+            const isLiveTv = args?.type === 'tv' || String(args?.id || '').startsWith('tv');
+            if (isLiveTv && res && Array.isArray(res.streams) && res.streams.length > 1) {
+                res.streams = await filterLiveStreams(res.streams, { logger: (m: string) => debugLog(m) });
+            }
+        } catch (e) { debugLog('[Failover][wrap] ' + ((e as any)?.message || e)); }
+        return res;
+    });
 
     return builder;
 }

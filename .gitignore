@@ -1,6 +1,7 @@
 # Dipendenze e artefatti di build
 node_modules/
 dist/
+cache/
 
 # Lockfile pnpm (il repo traccia già package-lock.json)
 pnpm-lock.yaml

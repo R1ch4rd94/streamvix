@@ -9,6 +9,7 @@
     "start": "node dist/addon.js",
     "dev": "ts-node src/addon.ts",
     "test": "node --test --require ts-node/register \"tests/**/*.test.ts\"",
+    "failover:smoke": "ts-node scripts/failover-smoke.ts",
     "check:domains": "node scripts/check_domains.js"
   },
   "dependencies": {
