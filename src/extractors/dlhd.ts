@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as https from 'https';
+import { parseDlhdPlayerLinks, parseDlhdIframeLinks } from './dlhdPage';
 
 // Dynamic require per evitare problemi TypeScript in Docker
 const HttpsProxyAgent = require('https-proxy-agent').HttpsProxyAgent;
@@ -235,12 +236,8 @@ async function performFullExtraction(url: string, channelId: string, retryCount 
   const response1 = await axiosGetWithRetry(initialUrl, daddyliveHeaders, 15000);
 
   // Extract player links
-  const playerLinkRegex = /<button[^>]*data-url="([^"]+)"[^>]*>Player\s*\d+<\/button>/g;
-  const playerLinks: string[] = [];
-  let match;
-  while ((match = playerLinkRegex.exec(response1.data)) !== null) {
-    playerLinks.push(match[1]);
-  }
+  const pageUrl = response1.request?.res?.responseUrl || initialUrl;
+  const playerLinks = parseDlhdPlayerLinks(response1.data, pageUrl);
 
   if (playerLinks.length === 0) {
     throw new Error('No player links found on the page');
@@ -258,10 +255,8 @@ async function performFullExtraction(url: string, channelId: string, retryCount 
         'Origin': fullPlayerUrl
       }, 12000);
 
-      const iframeRegex = /iframe src="([^"]*)"/g;
-      let iframeMatch;
-      while ((iframeMatch = iframeRegex.exec(response2.data)) !== null) {
-        const iframe = iframeMatch[1];
+      const playerPageUrl = response2.request?.res?.responseUrl || fullPlayerUrl;
+      for (const iframe of parseDlhdIframeLinks(response2.data, playerPageUrl)) {
         if (!iframeCandidates.includes(iframe)) {
           iframeCandidates.push(iframe);
         }
@@ -287,6 +282,8 @@ async function performFullExtraction(url: string, channelId: string, retryCount 
       }
 
       const response3 = await axiosGetWithRetry(iframe, daddyliveHeaders, 12000);
+
+      if (typeof response3.data !== 'string' || !response3.data.trim()) continue;
 
       iframeUrl = iframe;
       iframeContent = response3.data;
