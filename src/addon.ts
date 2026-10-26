@@ -57,7 +57,9 @@ import { getDvrStreamsForChannel, getDvrConfig, buildDvrRecordEntry } from './ut
 import { filterLiveStreams } from './utils/streamFailover';
 
 // ================= TYPES & INTERFACES =================
-const DISABLE_LIVE_EVENTS = process.env.DISABLE_LIVE_EVENTS === 'true';
+// Legacy Kubernetes flag intentionally ignored: Live/Eventi are always enabled.
+// const DISABLE_LIVE_EVENTS = process.env.DISABLE_LIVE_EVENTS === 'true';
+const DISABLE_LIVE_EVENTS = false;
 const IS_MH_DISABLED = (() => { try { const v = (process.env.DISABLE_MH || '').toLowerCase(); return v === 'true' || v === '1' || v === 'on'; } catch { return false; } })();
 const IS_SS_DISABLED = (() => { try { const v = (process.env.DISABLE_SPS || '').toLowerCase(); return v === 'true' || v === '1' || v === 'on'; } catch { return false; } })();
 // ThisNot e Sports99: OPT-IN (default OFF). Per accenderli: THISNOT_ENABLE=1 / SP99_ENABLE=1.
@@ -1904,8 +1906,8 @@ function createBuilder(initialConfig: AddonConfig = {}) {
                 );
             }
 
-            // ENV: DISABLE_LIVE_EVENTS — rimuovi solo Live + Eventi, lascia TV statica
-            if (process.env.DISABLE_LIVE_EVENTS === 'true' || process.env.DISABLE_LIVE_EVENTS === '1') {
+            // Config progetto: rimuovi solo Live + Eventi, lascia TV statica
+            if (DISABLE_LIVE_EVENTS) {
                 filtered.catalogs = (filtered.catalogs || []).filter((c: any) =>
                     !(c && ((c as any).id === 'streamvix_live' || (c as any).id === 'streamvix_eventi' || (c as any).id === 'streamvix_live_search' || (c as any).id === 'streamvix_eventi_search'))
                 );
@@ -8246,8 +8248,8 @@ app.get(['/manifest.json', '/:config/manifest.json', '/cfg/:config/manifest.json
             );
         }
 
-        // ENV: DISABLE_LIVE_EVENTS — rimuovi solo Live + Eventi, lascia TV statica
-        if (process.env.DISABLE_LIVE_EVENTS === 'true' || process.env.DISABLE_LIVE_EVENTS === '1') {
+        // Config progetto: rimuovi solo Live + Eventi, lascia TV statica
+        if (DISABLE_LIVE_EVENTS) {
             filtered.catalogs = (filtered.catalogs || []).filter((c: any) =>
                 !(c && ((c as any).id === 'streamvix_live' || (c as any).id === 'streamvix_eventi' || (c as any).id === 'streamvix_live_search' || (c as any).id === 'streamvix_eventi_search'))
             );

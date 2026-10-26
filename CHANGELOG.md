@@ -1,5 +1,160 @@
 # Changelog
 
+## [1.18.36](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.35...v1.18.36) (2026-10-06)
+
+
+### Bug Fixes
+
+* domains update ([279e61c](https://github.com/qwertyuiop8899/streamvix/commit/279e61ced22914d530535810fa3be53226f2bb2d))
+* domains update ([4414896](https://github.com/qwertyuiop8899/streamvix/commit/44148968316624864fafc20a6da015c7e233db52))
+* domains update ([c41cd8d](https://github.com/qwertyuiop8899/streamvix/commit/c41cd8d75a728a4508ba6d38445bceddafa3c4c4))
+* domains update ([611aaee](https://github.com/qwertyuiop8899/streamvix/commit/611aaee75611d5ec5c893ed5b3f570c4ac982c50))
+* domains update ([e44bd31](https://github.com/qwertyuiop8899/streamvix/commit/e44bd31a8f38dd1ebad60d66319756c6ce013e67))
+* domains update ([6fd2fbd](https://github.com/qwertyuiop8899/streamvix/commit/6fd2fbd11157f7cd1ca97a43f83c0f9be20d7288))
+* domains update ([8cc17e8](https://github.com/qwertyuiop8899/streamvix/commit/8cc17e8a6645e2597d46fc5358b63522c1ffe02e))
+* domains update ([9f95eec](https://github.com/qwertyuiop8899/streamvix/commit/9f95eecd398f1c5c958643a61a16880e619b20be))
+* push ([15b4a10](https://github.com/qwertyuiop8899/streamvix/commit/15b4a106bf2df6d9d00e301679d5da3cbaa8b270))
+
+## [1.18.35](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.34...v1.18.35) (2026-09-23)
+
+
+### Bug Fixes
+
+* domains update ([ee8e881](https://github.com/qwertyuiop8899/streamvix/commit/ee8e88177140406bd368f8ec704ea8ab9fcce49e))
+* domains update ([92ade47](https://github.com/qwertyuiop8899/streamvix/commit/92ade47f4ae46a2fcafa99fd4ad8e7606222eefb))
+* domains update ([4699c25](https://github.com/qwertyuiop8899/streamvix/commit/4699c25109cb7453302745800e6864c65ab51997))
+* domains update ([2f877a4](https://github.com/qwertyuiop8899/streamvix/commit/2f877a401fcba35a2e50a3c743744732470277e6))
+* index.ts ([31a694b](https://github.com/qwertyuiop8899/streamvix/commit/31a694b37c4efdb1a32a70e5997f4c7abc4cfd80))
+* index.ts ([23526bb](https://github.com/qwertyuiop8899/streamvix/commit/23526bbeb1f52d80baeb8fdd4c4734dde7e6fc71))
+
+## [1.18.34](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.33...v1.18.34) (2026-09-22)
+
+
+### Bug Fixes
+
+* dlurl ([63ec9f3](https://github.com/qwertyuiop8899/streamvix/commit/63ec9f38e0a9f76f315b6ebd8fa0b3adde5c363a))
+* domains update ([f9622de](https://github.com/qwertyuiop8899/streamvix/commit/f9622de5743a145ec0bf1a2cb091bcdc3bee2371))
+* domains update ([2f12d9a](https://github.com/qwertyuiop8899/streamvix/commit/2f12d9ad0145d79e8456b1fb545d291cb7913f0a))
+* domains update ([f31ec1d](https://github.com/qwertyuiop8899/streamvix/commit/f31ec1df5622d97d7d02bfb91f2bb0148303e535))
+* domains update ([b523ebe](https://github.com/qwertyuiop8899/streamvix/commit/b523ebebe4faa07240caadb56ab6e551941d7144))
+* domains update ([32acad7](https://github.com/qwertyuiop8899/streamvix/commit/32acad7049efa6f260f275abf7d7dedae6aa4397))
+* domains update ([d40c842](https://github.com/qwertyuiop8899/streamvix/commit/d40c842927884f7b2f9a37f8ef6e3f9bf667de79))
+* domains update ([2c237a2](https://github.com/qwertyuiop8899/streamvix/commit/2c237a27958b2a96ca6f03fb11a69235371ca949))
+* domains update ([b76b866](https://github.com/qwertyuiop8899/streamvix/commit/b76b8667a9eae2cbfef7736705b80ebbe26dc58f))
+
+## [1.18.33](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.32...v1.18.33) (2026-09-16)
+
+
+### Bug Fixes
+
+* domains update ([5764d19](https://github.com/qwertyuiop8899/streamvix/commit/5764d19f737e6dba3b48da14ae30d7e2dd1f07d4))
+* domains update ([6c56c1a](https://github.com/qwertyuiop8899/streamvix/commit/6c56c1ae248b4b43292bde45107460f63ffb322d))
+* domains update ([3d3ac58](https://github.com/qwertyuiop8899/streamvix/commit/3d3ac58cd08d134cbf7fc57165eb6421d8cc9cb8))
+* domains update ([ec7250a](https://github.com/qwertyuiop8899/streamvix/commit/ec7250a9b53ff325edba34c36cd845d451f29be6))
+* domains update ([80f8da2](https://github.com/qwertyuiop8899/streamvix/commit/80f8da21fcb44fe4574790f1db691b28e8548b89))
+* domains update ([9609b12](https://github.com/qwertyuiop8899/streamvix/commit/9609b1270b8dd11220538a289d0bf647c7492e7d))
+* mapp ([ddf8e10](https://github.com/qwertyuiop8899/streamvix/commit/ddf8e1031327f01e6878093d7ccc34584acfb537))
+
+## [1.18.32](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.31...v1.18.32) (2026-09-04)
+
+
+### Bug Fixes
+
+* vid url check ([c33ffbf](https://github.com/qwertyuiop8899/streamvix/commit/c33ffbf09540b42bd3ee570c399005ed41a685bf))
+
+## [1.18.31](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.30...v1.18.31) (2026-08-24)
+
+
+### Bug Fixes
+
+* anime ([d5e695a](https://github.com/qwertyuiop8899/streamvix/commit/d5e695a19d9bed42f2bb4c444a82f1f42ea11c99))
+* **animeworld:** il fallback serviva la versione giapponese etichettata ITA ([d5e695a](https://github.com/qwertyuiop8899/streamvix/commit/d5e695a19d9bed42f2bb4c444a82f1f42ea11c99))
+
+## [1.18.30](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.29...v1.18.30) (2026-08-24)
+
+
+### Bug Fixes
+
+* animemapping ([76ad861](https://github.com/qwertyuiop8899/streamvix/commit/76ad861417bb42cdc8cd6cd8e5d128c7f6b7ed34))
+* domains update ([ca9e677](https://github.com/qwertyuiop8899/streamvix/commit/ca9e677c79b4aa56be647c94792d5ae11a130ba5))
+* domains update ([f23254a](https://github.com/qwertyuiop8899/streamvix/commit/f23254a617a44633fa88ad656b4797daaaa14e28))
+* domains update ([66fc5c5](https://github.com/qwertyuiop8899/streamvix/commit/66fc5c5a81aba9098bfd1d5215663b3392493a1f))
+* domains update ([f47fe59](https://github.com/qwertyuiop8899/streamvix/commit/f47fe59114188f3b18e775dd1d1df1aff640dd9f))
+* domains update ([455216c](https://github.com/qwertyuiop8899/streamvix/commit/455216c60ef8f53eb181561e898e1ecafcc6c8ed))
+* domains update ([f6854e2](https://github.com/qwertyuiop8899/streamvix/commit/f6854e26d5b0ad947ada5fda4156d92a7e63d201))
+* domains update ([627dd4f](https://github.com/qwertyuiop8899/streamvix/commit/627dd4f505a12e6a1a117ec7fadf0b590af20700))
+* domains update ([994dc2d](https://github.com/qwertyuiop8899/streamvix/commit/994dc2d2ed57cef54290b85a01aee74069f73b91))
+* domains update ([6dadfc0](https://github.com/qwertyuiop8899/streamvix/commit/6dadfc063ddd0a3c868d7bbb7fc63c2d275559e5))
+* domains update ([3325d3b](https://github.com/qwertyuiop8899/streamvix/commit/3325d3b53abd32a4f3a4bb18053e2165dd169447))
+* update anime mapping API endpoint ([e5071c8](https://github.com/qwertyuiop8899/streamvix/commit/e5071c850b2eea7190df0a3fad24e50b122b4bce))
+* update anime mapping API endpoint ([aa06225](https://github.com/qwertyuiop8899/streamvix/commit/aa0622592fdc01ff3947c59cdaadcabf5dbddb45))
+
+## [1.18.29](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.28...v1.18.29) (2026-08-05)
+
+
+### Bug Fixes
+
+* domains update ([22983f3](https://github.com/qwertyuiop8899/streamvix/commit/22983f3945dbb78d127feb9f0f9e46e01cfefa73))
+* domains update ([b46fa36](https://github.com/qwertyuiop8899/streamvix/commit/b46fa36fd9f17c9f1bf10c8eed77597e97d312f3))
+
+## [1.18.28](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.27...v1.18.28) (2026-07-31)
+
+
+### Bug Fixes
+
+* adn-provider.ts ([132d98d](https://github.com/qwertyuiop8899/streamvix/commit/132d98de4420d55b1d6c8d9be56b8a464d4f9117))
+* domains update ([64c0a4b](https://github.com/qwertyuiop8899/streamvix/commit/64c0a4bfabaf44978fcb55c8e3340a82c56cd82b))
+* domains update ([c7be34c](https://github.com/qwertyuiop8899/streamvix/commit/c7be34c3e3ea5821e367b0bb7533a34cae5a6dd8))
+* domains update ([2080ae2](https://github.com/qwertyuiop8899/streamvix/commit/2080ae2875d1c89955cc4fb4c78f5666f02f8fac))
+* domains update ([6f0a4a9](https://github.com/qwertyuiop8899/streamvix/commit/6f0a4a9ca468e0dd4d0c77307f26ac405b591ed9))
+
+## [1.18.27](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.26...v1.18.27) (2026-07-29)
+
+
+### Bug Fixes
+
+* addon.ts ([03301d8](https://github.com/qwertyuiop8899/streamvix/commit/03301d842cc8794d613acc5cb099588124ab2e60))
+* addon.ts ([c0ef982](https://github.com/qwertyuiop8899/streamvix/commit/c0ef98229d572f685bf3c5715525f9f1fd23f4f4))
+* dynamicChannels.ts ([de6694c](https://github.com/qwertyuiop8899/streamvix/commit/de6694cb066855ce1c409a249ac7eb3166d6c575))
+
+## [1.18.26](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.25...v1.18.26) (2026-07-28)
+
+
+### Bug Fixes
+
+* domains update ([7b7e48a](https://github.com/qwertyuiop8899/streamvix/commit/7b7e48a5d6ce86cab249954fd8906a1b5597085b))
+* domains update ([5a97aa0](https://github.com/qwertyuiop8899/streamvix/commit/5a97aa07cee68d83800d10cd3955d34a12a24fad))
+* domains update ([b52e5f0](https://github.com/qwertyuiop8899/streamvix/commit/b52e5f0038edc835cc73bea3b7a69a83f97662db))
+* domains update ([6560fbd](https://github.com/qwertyuiop8899/streamvix/commit/6560fbd7d8544b764ef57ab5f557919469a9fdd6))
+* env ([c187a66](https://github.com/qwertyuiop8899/streamvix/commit/c187a6651609506b4e2499bccef342d62c0a4316))
+
+## [1.18.25](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.24...v1.18.25) (2026-07-21)
+
+
+### Bug Fixes
+
+* Live.py ([861caba](https://github.com/qwertyuiop8899/streamvix/commit/861cabab5d263402aa2cf4d58210895f47bc3215))
+
+## [1.18.24](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.23...v1.18.24) (2026-07-20)
+
+
+### Bug Fixes
+
+* animesaturn ([e3570f8](https://github.com/qwertyuiop8899/streamvix/commit/e3570f83816faea60b000b5607b2623a36d19e8d))
+* au ([87499fb](https://github.com/qwertyuiop8899/streamvix/commit/87499fb22b93f96ac1617d94fce0e6bcb6959ddb))
+* domains update ([49ba129](https://github.com/qwertyuiop8899/streamvix/commit/49ba129085c9c92833b72a1a0beeafe93d490d04))
+* domains update ([c3c8ede](https://github.com/qwertyuiop8899/streamvix/commit/c3c8ede01c0522a28c879f95b870132d93d7a658))
+* domains update ([8057da1](https://github.com/qwertyuiop8899/streamvix/commit/8057da141bd5ec45400dcec1e4fd914bb4ad2810))
+* domains update ([58c8497](https://github.com/qwertyuiop8899/streamvix/commit/58c8497087981b5969be5bc579711be0587bcd19))
+* domains update ([02d08af](https://github.com/qwertyuiop8899/streamvix/commit/02d08af46feeb8503dc40687f00d9d6ffe0c6ce8))
+* domains update ([7cfdb6b](https://github.com/qwertyuiop8899/streamvix/commit/7cfdb6bfb491b785c8f23ec84ea275f632493492))
+* domains update ([646829a](https://github.com/qwertyuiop8899/streamvix/commit/646829a408bd9623de11912357ab502a7bb96b45))
+* domains update ([a11e01e](https://github.com/qwertyuiop8899/streamvix/commit/a11e01ea21373f84ce51d200203f0efe1b8fe8b9))
+* domains update ([5fcb726](https://github.com/qwertyuiop8899/streamvix/commit/5fcb7262c942604cc5ccd740b1191b973acaf869))
+* domains update ([5b6cd18](https://github.com/qwertyuiop8899/streamvix/commit/5b6cd182137e7d61b78a712053921ec3e9953b91))
+* domains update ([3bf5013](https://github.com/qwertyuiop8899/streamvix/commit/3bf50134b576ca3a9f2dc56c8806b5aa38ddc532))
+* domains update ([d6709fd](https://github.com/qwertyuiop8899/streamvix/commit/d6709fd9c0ecb726051abb84531265582743f11e))
+
 ## [1.18.23](https://github.com/qwertyuiop8899/streamvix/compare/v1.18.22...v1.18.23) (2026-06-26)
 
 
