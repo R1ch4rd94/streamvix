@@ -2310,11 +2310,8 @@ function createBuilder(initialConfig: AddonConfig = {}) {
 
                     filteredChannels = filteredChannels.filter(ch => getChannelCategories(ch).includes(target));
                     console.log(`🔍 Genre='${norm}' -> slug='${target}' results=${filteredChannels.length}`);
-                } else {
-                    // Nessun genre e nessuna search -> richiesta dalla Home: restituisci vuoto per non mostrare il catalogo
-                    console.log(`📺 No genre/search filter -> Home request, returning empty`);
-                    return { metas: [], cacheMaxAge: 300 };
                 }
+                // Senza categoria, mostra tutto il catalogo live invece di una lista vuota.
             }
 
             // Se filtro richiesto e nessun canale trovato -> aggiungi placeholder

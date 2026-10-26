@@ -31,7 +31,12 @@ export function liveOnlyManifest(manifest: Manifest): Manifest {
     ],
     catalogs: (manifest.catalogs || []).filter(c => ids.has(c.id)).map(c => ({
       ...c,
-      extra: c.extra?.map((e: { name: string; isRequired?: boolean }) => e.name === 'genre' ? { ...e, isRequired: false } : e),
+      extra: c.extra?.map((e: { name: string; isRequired?: boolean; options?: string[] }) => e.name === 'genre' ? {
+        ...e, isRequired: false,
+        ...(c.id === 'streamvix_live' ? {
+          options: e.options?.filter(option => !['Z-Eventi', 'AK-Eventi', 'X-Eventi', 'THISNOT'].includes(option)),
+        } : {}),
+      } : e),
     })),
     config: (manifest.config || []).filter(c => ['mediaFlowProxyUrl', 'mediaFlowProxyPassword'].includes(c.key)),
   };
