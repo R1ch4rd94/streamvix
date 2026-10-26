@@ -32,7 +32,7 @@ footer{border-top:1px solid #554074;margin-top:28px;padding-top:18px;font-size:1
 <small>Il link contiene la configurazione del proxy: conservalo per uso personale.</small></section>
 <footer aria-label="Crediti">
 <p>Basato su <a href="https://github.com/qwertyuiop8899/streamvix" target="_blank" rel="noopener noreferrer">StreamViX</a>, progetto originale di <a href="https://github.com/qwertyuiop8899" target="_blank" rel="noopener noreferrer">qwertyuiop8899</a> e dei suoi collaboratori.</p>
-<p>Questa versione dedicata agli eventi live è un <a href="https://github.com/R1ch4rd94/streamvix" target="_blank" rel="noopener noreferrer">fork personale di R1ch4rd94</a>.</p>
+<p>Questa versione dedicata agli eventi live</p>
 </footer>
 </main><script>
 const defaults=${json(defaults)};
