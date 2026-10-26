@@ -17,6 +17,7 @@ main{width:100%;max-width:560px;background:#211832;border:1px solid #554074;bord
 input,button,a{font:inherit}input{width:100%;padding:13px;border:1px solid #74618e;border-radius:10px;background:#151020;color:#fff}input:focus{outline:2px solid #b995ff;outline-offset:2px}
 button,.install{display:block;width:100%;padding:13px 16px;border:0;border-radius:10px;cursor:pointer;text-align:center;text-decoration:none;font-weight:650}button{background:#a87af5;color:#160b27;margin-top:24px}.install{background:#a87af5;color:#160b27;margin:18px 0 10px}.secondary{background:#392a50;color:#fff;margin-top:10px}
 small{display:block;color:#bbaeca;margin-top:8px}#error{color:#ffb4b4}#result[hidden]{display:none}#result{border-top:1px solid #554074;margin-top:26px;padding-top:8px}#manifest{font-size:13px}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+footer{border-top:1px solid #554074;margin-top:28px;padding-top:18px;font-size:14px;color:#bbaeca}footer a{color:#cfb2ff;text-underline-offset:3px}footer p{margin:6px 0}
 </style></head><body><main>
 <h1>StreamViX Live</h1><p>Solo eventi sportivi e sorgenti live. Inserisci il tuo EasyProxy per iniziare.</p>
 <form id="config-form">
@@ -29,6 +30,10 @@ small{display:block;color:#bbaeca;margin-top:8px}#error{color:#ffb4b4}#result[hi
 <label for="manifest">Link del manifest</label><input id="manifest" readonly>
 <button id="copy" class="secondary" type="button">Copia link</button><small id="copy-status" role="status"></small>
 <small>Il link contiene la configurazione del proxy: conservalo per uso personale.</small></section>
+<footer aria-label="Crediti">
+<p>Basato su <a href="https://github.com/qwertyuiop8899/streamvix" target="_blank" rel="noopener noreferrer">StreamViX</a>, progetto originale di <a href="https://github.com/qwertyuiop8899" target="_blank" rel="noopener noreferrer">qwertyuiop8899</a> e dei suoi collaboratori.</p>
+<p>Questa versione dedicata agli eventi live è un <a href="https://github.com/R1ch4rd94/streamvix" target="_blank" rel="noopener noreferrer">fork personale di R1ch4rd94</a>.</p>
+</footer>
 </main><script>
 const defaults=${json(defaults)};
 const liveDefaults=${json(LIVE_ONLY_DEFAULTS)};
