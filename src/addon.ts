@@ -2,7 +2,8 @@ import { addonBuilder, getRouter, Manifest, Stream } from "stremio-addon-sdk";
 import { getStreamContent, VixCloudStreamInfo, ExtractorConfig } from "./extractor";
 import { mapLegacyProviderName, buildUnifiedStreamName, providerLabel } from './utils/unifiedNames';
 import * as fs from 'fs';
-import { landingTemplate } from './landingPage';
+import { landingTemplate } from './liveLandingPage';
+import { liveOnlyConfig, liveOnlyManifest } from './liveOnly';
 import * as path from 'path';
 import express, { Request, Response, NextFunction } from 'express';
 import fetch from 'node-fetch';
@@ -944,7 +945,7 @@ function loadCustomConfig(): Manifest {
         if (fs.existsSync(configPath)) {
             const customConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
-            return {
+            return liveOnlyManifest({
                 ...baseManifest,
                 id: customConfig.addonId || baseManifest.id,
                 name: customConfig.addonName || baseManifest.name,
@@ -954,13 +955,13 @@ function loadCustomConfig(): Manifest {
                 icon: customConfig.addonLogo || baseManifest.icon,
                 favicon: customConfig.addonFavicon || customConfig.addonLogo || baseManifest.logo,
                 background: baseManifest.background
-            };
+            });
         }
     } catch (error) {
         console.error('Error loading custom configuration:', error);
     }
 
-    return baseManifest;
+    return liveOnlyManifest(baseManifest);
 }
 
 // Funzione per parsare la configurazione dall'URL
@@ -1892,6 +1893,7 @@ const _addonStats: AddonStats = {
 
 // Funzione per creare il builder con configurazione dinamica
 function createBuilder(initialConfig: AddonConfig = {}) {
+    initialConfig = liveOnlyConfig(initialConfig as Record<string, unknown>);
     const manifest = loadCustomConfig();
     // Applica un filtro leggero al manifest per nascondere il catalogo TV quando disabilitato
     const effectiveManifest: Manifest = (() => {
@@ -1933,6 +1935,8 @@ function createBuilder(initialConfig: AddonConfig = {}) {
 
     // === TV CATALOG HANDLER ONLY ===
     builder.defineCatalogHandler(async ({ type, id, extra, config: requestConfig }: { type: string; id: string; extra?: any; config?: any }) => {
+        requestConfig = liveOnlyConfig(requestConfig);
+        if (!(effectiveManifest.catalogs || []).some(c => c.id === id)) return { metas: [] };
         if (type === "tv") {
             // Simple runtime toggle: hide TV when disabled
             try {
@@ -7317,6 +7321,8 @@ function createBuilder(initialConfig: AddonConfig = {}) {
     // === Failover D.9: nasconde gli stream morti su TUTTI i rami TV/live ===
     // (i canali statici non passavano dal filtro interno del ramo eventi)
     builder.defineStreamHandler(async (args: { id: string; type: string; config?: any }): Promise<{ streams: Stream[] }> => {
+        if (args.type !== 'tv' || args.id.startsWith('dvr')) return { streams: [] };
+        args = { ...args, config: liveOnlyConfig(args.config) };
         const res = await streamHandlerImpl(args);
         try {
             const isLiveTv = args?.type === 'tv' || String(args?.id || '').startsWith('tv');
